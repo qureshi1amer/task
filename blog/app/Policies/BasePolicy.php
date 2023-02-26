@@ -26,4 +26,9 @@ class BasePolicy
     {
         return $user->id === $model->user_id;
     }
+    protected function denyAccess()
+    {
+       return $this->deny(__('auth.update', ['model' => $this->modelName]) );
+    }
+
 }

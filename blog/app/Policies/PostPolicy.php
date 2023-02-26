@@ -23,7 +23,7 @@ class PostPolicy extends  BasePolicy
         if ($this->canAccess($user, $post)) {
             return true;
         }
-        return $this->deny(__('auth.update', ['model' => $this->modelName]));
+        return $this->denyAccess();
     }
 
     public function delete(User $user, Post $post)
@@ -31,7 +31,7 @@ class PostPolicy extends  BasePolicy
         if ($this->canAccess($user, $post)) {
             return true;
         }
-        return $this->deny(__('auth.delete', ['model' => $this->modelName]));
+        return $this->denyAccess();
     }
 
 }

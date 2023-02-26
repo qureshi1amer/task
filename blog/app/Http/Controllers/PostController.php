@@ -49,7 +49,7 @@ class PostController extends Controller
 
     public function destroy(Post $post)
     {
-        $post->delete();
+        $post->withoutRelations()->delete();
         return redirect()->route('posts.index');
     }
 }

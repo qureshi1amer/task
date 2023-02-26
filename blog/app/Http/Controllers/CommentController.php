@@ -23,6 +23,6 @@ class CommentController extends Controller
 
     public function destroy(Post $post, Comment $comment)
     {
-        $comment->delete();
+        $comment->withoutRelations()->delete();
     }
 }

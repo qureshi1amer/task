@@ -15,7 +15,7 @@ class CategoryPolicy extends BasePolicy
         if ($this->canAccess($user, $category)) {
             return true;
         }
-        return $this->deny(__('auth.update', ['model' => $this->modelName]) );
+        return $this->denyAccess();
     }
 
     public function delete(User $user, Category $category)
@@ -23,6 +23,6 @@ class CategoryPolicy extends BasePolicy
         if ($this->canAccess($user, $category)) {
             return true;
         }
-        return $this->deny(__('auth.update', ['model' => $this->modelName]));
+        return $this->denyAccess();
     }
 }
